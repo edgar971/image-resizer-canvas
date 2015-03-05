@@ -1,12 +1,14 @@
 //Base Styles 
-@import "base/_base.scss";
+@import "base/base.scss";
 
+//Component Styles
+@import "components/all_components.scss";
  
  //Vendor Styles
- 
- //Component Styles
- 
+@import "vendors/all-vendors.scss";
+
  //Pages
  
+ @import "pages/all-pages.scss";
  
-
+ 
