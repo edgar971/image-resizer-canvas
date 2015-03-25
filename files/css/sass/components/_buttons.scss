@@ -1,0 +1,40 @@
+button, .button {
+	border: none;
+	background: none;
+	cursor: pointer;
+	font-family: $headingFont;
+	text-decoration: none;
+	transition: background ease .25s;
+}
+button:focus, .button:focus {
+	outline: none;
+	
+}
+button.button-primary, .button.button-primary {
+	background: $primary-color;
+	&:hover {
+        background:darken($primary-color, 10%);
+    }
+}
+
+button.button-secondary, .button.button-secondary {
+	background: $secondary-color;
+	&:hover {
+        background:darken($secondary-color, 10%);
+    }
+}
+
+button.button-tertiary, .button.button-tertiary {
+	background: $tertiary-color;
+	&:hover {
+        background: darken($tertiary-color, 10%);
+    }
+}
+
+
+button.button-quaternary, .button.button-quaternary {
+	background: $quaternary-color;
+	&:hover {
+        background:darken($quaternary-color, 10%);
+    }
+}

@@ -4,11 +4,13 @@
 //Component Styles
 @import "components/all_components.scss";
  
- //Vendor Styles
+//Vendor Styles
 @import "vendors/all-vendors.scss";
 
- //Pages
- 
- @import "pages/all-pages.scss";
+//Global 
+@import "global/all-global.scss";
+
+//Pages 
+@import "pages/all-pages.scss";
  
  

@@ -1,11 +1,14 @@
 //Load Fonts
 	
-@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:400italic,400,700,600,800|Open+Sans+Condensed:300,700);	
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:400italic,300,400,700,600,800|Open+Sans+Condensed:300,700);	
 
 //Font Names
 $headingFont: 'Open Sans Condensed', sans-serif;
 $paragraphFont: 'Open Sans', sans-serif;
 $sourceFont: 'Source Sans Pro', sans-serif;
+
+$headingFont-color: #101010;
+$paragraphFont-color: #272727;
 
 //media querie variables http://bradfrostweb.com/blog/post/7-habits-of-highly-effective-media-queries/#overboard
 $smallBP: 24em;
@@ -18,3 +21,27 @@ $largeBP2: 54.5em;
 $xlargeBP: 60em;
 $xlargeBP2: 67em;
 
+$mq-smallBP:  "all and (max-width: #{$smallBP)})";
+$mq-smallBP2:  "all and (max-width: #{$smallBP2)})";
+$mq-smallBP3:  "all and (max-width: #{$smallBP3)})";
+$mq-mediumBP:  "all and (max-width: #{$mediumBP)})";
+$mq-mediumBP2:  "all and (max-width: #{$mediumBP2)})";
+$mq-largeBP:  "all and (max-width: #{$largeBP)})";
+$mq-largeBP2:  "all and (max-width: #{$largeBP2)})";
+$mq-xlargeBP:  "all and (max-width: #{$xlargeBP)})";
+$mq-xlargeBP2:  "all and (max-width: #{$xlargeBP2)})";
+
+//project colors
+$primary-color: #247AFB;
+$secondary-color: #FFFFFF;
+$tertiary-color: #EA5B2E;
+$quaternary-color: #B61B2B;
+
+
+//padding/margins vars
+$basespace: .5em;
+$basespaceInterval: 4;
+
+
+//grid 
+$columns: 12;

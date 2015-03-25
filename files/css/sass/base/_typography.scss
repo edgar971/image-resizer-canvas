@@ -1,8 +1,7 @@
 	
 	//better font size http://typecast.com/blog/a-more-modern-scale-for-web-typography
 	body {
-		color: $black;
-		font-family: $paragraphFont;
+ 		font-family: $paragraphFont;
 		font-size: 1em;
 		line-height: 1.375em;
 		font-weight: 400;
@@ -12,8 +11,7 @@
 	
 	strong {
 		font-weight: bold;
-		color: $black;
-	}
+ 	}
 	em, i {
 		font-style: italic;
 	}
@@ -51,7 +49,26 @@
 		font-family: $sourceFont;
 	}
 	
+	.font-white {
+		color: $white;
+	}
 	
+	.font-left {
+		text-align: left;
+	}
+	.font-right {
+		text-align: right;
+	}
+	.font-center {
+		text-align: center;
+	}
+	
+	.font-uppercase {
+		text-transform: uppercase;
+	}
+	.font-shadow-light {
+		text-shadow: 0px 0px 3px black;
+	}
 
 @media all and (max-width: $largeBP) {
     body {

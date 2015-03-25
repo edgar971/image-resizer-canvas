@@ -1,0 +1,80 @@
+
+
+.vertical-align:before {
+		content: '';
+		display: inline-block;
+		height: 100%;
+		vertical-align: middle;
+		margin-right: -0.25em; /* Adjusts for spacing */
+		
+	
+
+}
+.center {
+		display: inline-block;
+		vertical-align: middle;
+
+	}
+	
+
+.overflow {
+	overflow: hidden;
+}
+.full-width {
+	width: 100%;
+}
+.full-height {
+	height: 100%;
+}
+
+//paddings
+
+
+//margins
+//columns
+
+.container {
+	max-width: 960px;
+	width: 100%;
+	margin: auto;
+	@media #{$mq-xlargeBP2} {
+		padding: 0 1em;
+	}
+}
+
+.container.override-width {
+	max-width: 1200px;
+	@media all and (max-width: 1200px) {
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+}
+
+.columns {
+	overflow: hidden;
+	> *  {
+		float: left;
+	}
+	> *.column-right {
+		float: right;
+	}
+	> *.column-left {
+		float: left;
+	}
+	
+}
+
+
+@for $i from 1 through $columns {
+  .columns.columns-#{$i} > * {
+    width: ((100 / $i)) * 1%;
+  }
+}
+
+@for $i from 1 through $columns {
+  .column-#{$i} {
+    width: ((100 / $columns) * $i) * 1%;
+  }
+}
+
+

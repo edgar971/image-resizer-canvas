@@ -63,7 +63,10 @@ $black:  #111;
 .bg-silver {  background-color: $silver; }
 .bg-black {   background-color: $black; }
 
-
+.bg-primary { background-color: $primary-color; }
+.bg-secondary { background-color: $secondary-color; }
+.bg-tertiary { background-color: $tertiary-color; }
+.bg-quaternary { background-color: $quaternary-color; }
 /* Colors */
 
 .navy {       color: $navy; }
@@ -83,6 +86,11 @@ $black:  #111;
 .silver {     color: $silver; }
 .gray {       color: $gray; }
 .black {      color: $black; }
+
+.primary {  color: $primary-color; }
+.secondary {  color: $secondary-color; }
+.tertiary {  color: $tertiary-color; }
+.quaternary {  color: $quaternary-color; }
 
 
 /* Border colors 

@@ -1,0 +1,66 @@
+.block-shadow-small {
+	box-shadow: 0px 0px 5px #4d4d4d;
+}
+
+.block-rotate-left {
+	transform: rotate(-5deg);
+}
+
+.block-left {
+	float: left;
+}
+.block-right {
+	float: right;
+}
+
+@for $i from 1 through $basespaceInterval {
+  .padding-all-#{$i}x {
+    padding: ($basespace * $i);
+  }
+  .padding-vertical-#{$i}x {
+    padding-top: ($basespace * $i);
+    padding-bottom: ($basespace * $i);
+  }
+  .padding-horizontal-#{$i}x {
+    padding-left: ($basespace * $i);
+    padding-right: ($basespace * $i);
+  }
+  .padding-right-#{$i}x {
+    padding-right: ($basespace * $i);
+    
+  }
+  .padding-left-#{$i}x {
+    padding-left: ($basespace * $i);
+  }
+  .padding-top-#{$i}x {
+    padding-top: ($basespace * $i);
+  }
+  .padding-bottom-#{$i}x {
+    padding-bottom: ($basespace * $i);
+  }
+
+  .margin-all-#{$i}x {
+    margin: ($basespace * $i);
+  }
+  .margin-vertical-#{$i}x {
+    margin-top: ($basespace * $i);
+    margin-bottom: ($basespace * $i);
+  }
+  .margin-horizontal-#{$i}x {
+    margin-left: ($basespace * $i);
+    margin-right: ($basespace * $i);
+  }
+  .margin-right-#{$i}x {
+    margin-right: ($basespace * $i);
+  }
+  .margin-left-#{$i}x {
+    margin-left: ($basespace * $i);
+  }
+  .margin-top-#{$i}x {
+    margin-top: ($basespace * $i);
+  }
+  .margin-bottom-#{$i}x {
+    margin-bottom: ($basespace * $i);
+  }
+
+}
