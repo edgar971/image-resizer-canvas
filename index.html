@@ -29,13 +29,64 @@
 <link href="#" rel="apple-touch-icon" sizes="152x152" />
 <!-- end shortcut icons  -->
 <link rel="stylesheet" type="text/css" media="screen" href="/files/css/main.css">
+<link rel="stylesheet" type="text/css" media="screen" href="/files/cropper.css">
 
 </head>
 	<body class="page-name page-style">
 <!-- 	<iframe style="display:none" src="/files/cache/cache.html" frameborder="0" height="0" width="0"></iframe> -->
-	
-		
-		
+		<nav class="blue-grey darken-2">
+		   <div class="nav-wrapper">
+		     <a href="#" class="brand-logo center font-strong "><strong>Image Cropper</strong></a>
+		   </div>
+		 </nav>		
+		 <main class="grey lighten-5">
+		 	<section class="row">
+			 	<article class="col s9">
+					<div class="cropper-container">
+						<img src="/files/assets/image.jpg" class="responsive-img" alt="Change Me" />
+					</div>
+				 	
+			 	</article>
+			 	<aside class="col s3 blue-grey lighten-4">
+				 	<form>
+					 	<ul>
+							<li>
+								<h4><strong>Predefined Size:</strong></h4>
+							</li>
+						 	<li>
+								<select class="pre-defined-sizes">
+								    <option value="" disabled selected>Select Image Size</option>
+								    <option value="1">Marquee</option>
+								    <option value="2">Used Equipment</option>
+								    <option value="3">Sales Rep</option>
+								</select>
+							</li>
+							<li>
+								<h4><strong>Custom Size:</strong></h4>
+							</li>
+							<li>
+									<p class="range-field">
+									Width:
+								    <input type="range" id="test5" min="200" max="2000" />
+								    </p>
+							</li>
+							<li>
+									<p class="range-field">
+									Height:
+								    <input type="range" id="test5" min="200" max="2000" />
+									</p>
+							</li>
+							<li>
+								<button class="waves-effect waves-blue btn-flat blue darken-3 white-text" >Download <i class="mdi-file-cloud-download right"></i></button>
+							</li>
+						</ul>
+						
+					</form>
+			 	</aside>
+			 	
+		 	</section>
+		 	
+		 </main>
 		
 		
 		
@@ -50,5 +101,9 @@
 		<!--<![endif]-->
 		<script src="/files/js/libs-min.js"></script>
 	 	<script src="/files/js/site-min.js"></script>
+	 	<script src="/files/cropper.js" charset="utf-8">
+	 	</script>
+	 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
+
 	</body>
 </html>
