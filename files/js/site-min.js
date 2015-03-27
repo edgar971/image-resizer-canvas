@@ -1,2 +1,2 @@
 
-;$(window).load(function(){$("select").material_select(),$(".cropper-container img").cropper({aspectRatio:16/9,autoCropArea:.65,strict:!1,guides:!1,highlight:!1,dragCrop:!1,movable:!1,resizable:!1})});
+;$(window).load(function(){$("select").material_select(),$(".cropper-container > img").cropper({aspectRatio:16/9,crop:function(){}})});var cropApp=angular.module("cropper",[]);cropApp.controller("CropController",["$scope","$timeout",function(o){o.options={},o.options.width=500,o.options.height=500,o.updateWidth=function(o){console.log(o)},o.updateHeight=function(o){console.log(o)},o.downloadImg=function(){}}]);
