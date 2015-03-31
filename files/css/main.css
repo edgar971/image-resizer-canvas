@@ -14265,3 +14265,11 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 /* line 4, /Users/edgar971/Documents/Labs/image-cropper/files/css/sass/pages/_index.scss */
 .input-field label {
   left: 0; }
+
+/* line 8, /Users/edgar971/Documents/Labs/image-cropper/files/css/sass/pages/_index.scss */
+.dropdown-content {
+  background: #1e88e5; }
+
+/* line 11, /Users/edgar971/Documents/Labs/image-cropper/files/css/sass/pages/_index.scss */
+.tabs .indicator {
+  background: #274E88; }
