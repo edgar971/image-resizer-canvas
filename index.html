@@ -1,9 +1,9 @@
 <!doctype html>
-<!--[if lt IE 7 ]><html class="ie ie6 no-js" lang="en"  ng-app="cropper"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7 no-js" lang="en"  ng-app="cropper"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8 no-js" lang="en"  ng-app="cropper"> <![endif]-->
-<!--[if gte IE 9 ]><html class="ie ie9 no-js" lang="en"  ng-app="cropper"> <![endif]-->
-<!--[if !(IE)]><!--><html lang="en" class="no-js"  ng-app="cropper"> <!--<![endif]--><head>
+<!--[if lt IE 7 ]><html class="ie ie6 no-js" lang="en"  > <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7 no-js" lang="en"  > <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8 no-js" lang="en"  > <![endif]-->
+<!--[if gte IE 9 ]><html class="ie ie9 no-js" lang="en"  > <![endif]-->
+<!--[if !(IE)]><!--><html lang="en" class="no-js"  > <!--<![endif]--><head>
 <!-- Load html shiv if earlier than IE 9 -->
 <!--[if lt IE 9]>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -29,7 +29,6 @@
 <link href="#" rel="apple-touch-icon" sizes="152x152" />
 <!-- end shortcut icons  -->
 <link rel="stylesheet" type="text/css" media="screen" href="/files/css/main.css">
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js" charset="utf-8">
 	
 </script>
 
@@ -49,7 +48,7 @@
 					</div>
 				 	
 			 	</article>
-			 	<aside class="col s3 blue-grey lighten-4" ng-controller="CropController">
+			 	<aside class="col s3 blue-grey lighten-4">
 
 					 	<ul>
 						 	<li>
@@ -72,17 +71,17 @@
 							<li>
 								<div class="row">
 								      <div class="input-field col s6 padding-none ">
-								        <input id="width_input" type="number" step="5" class="validate" ng-model="options.width" ng-change="updateWidth(options.width)"  value="{{options.width}}">
+								        <input id="width_input" type="number" disabled step="5" value="0" class="validate"    >
 								        <label for="width_input">Width:</label>
 								      </div>
 								      <div class="input-field col s6 padding-none ">
-								        <input id="height_input" type="number" step="5" class="validate" ng-model="options.height" ng-change="updateHeight(options.height)" value="{{options.height}}" >
+								        <input id="height_input" type="number" disabled step="5" value="0" class="validate"  >
 								        <label for="height_input">Height:</label>
 								      </div>
 								</div>							
     						</li>
 							<li>
-								<button class="waves-effect waves-blue btn-flat blue darken-3 white-text" ng-click="downloadImg()">Download <i class="mdi-file-cloud-download right"></i></button>
+								<a class="waves-effect waves-blue btn-flat blue darken-3 white-text" href="test"data-crop="download">Download <i class="mdi-file-cloud-download right"></i></a>
 							</li>
 						 	<li>
 						 	

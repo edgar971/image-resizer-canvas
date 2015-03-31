@@ -1,31 +1,35 @@
+function downloadCanvas(link, canvasId, filename) {
+    link.href = document.getElementById(canvasId).toDataURL();
+    link.download = filename;
+}
+
+
 $(window).load(function(){
-	
+	var $cropArea = $('.cropper-container > img');
     $('select').material_select();
-	$('.cropper-container > img').cropper({
-		aspectRatio: 16 / 9,
+	
+	$cropArea.cropper({
+		aspectRatio: NaN,
 		crop: function(data) {
-		  // Output the result data for cropping image.
+			 $("#height_input").val(Math.round(data.height));
+			 $("#width_input").val(Math.round(data.width));
 		}
+		
 	});	
+	
+	$('[data-crop="download"]').on('click', function(event){
+		var downloadBtn = this;
+		var imageData = $cropArea.cropper('getCroppedCanvas').toDataURL();
+		var filename  = "example.png";
+		
+		$(downloadBtn).attr({
+			"download": filename,
+			"href": imageData
+		});
+		
+		
+	})
+	
+	
 })
 
-//angular stuff 
-var cropApp = angular.module('cropper', []);
-
-
-cropApp.controller('CropController',['$scope', '$timeout', function($scope, $timeout) {
-  	$scope.options = {};
-	$scope.options.width = 500;
-	$scope.options.height = 500;
-	$scope.updateWidth = function(data) {
-		console.log(data);
-	}
-	
-	$scope.updateHeight = function(data) {
-		console.log(data);
-	}
-	$scope.downloadImg = function(data) {
-		
-	}
-	
-}]);
