@@ -1,6 +1,11 @@
 function downloadCanvas(link, canvasId, filename) {
+	
+	console.log(document.getElementById(canvasId).toDataURL());
+    return false;
+/*
     link.href = document.getElementById(canvasId).toDataURL();
     link.download = filename;
+*/
 }
 
 var CropApp = CropApp || {};
@@ -9,9 +14,41 @@ var CropApp = CropApp || {};
 CropApp.canvasArea = null;
 CropApp.image = null;
 //download canvas
-CropApp.downloadCanvas = function() {
+CropApp.downloadCanvas = function(link, canvas, file) {
+	//exit if
+	if(link == null || canvas == null || file == null) return false;
+	
+	var imageData = canvas.cropper('getCroppedCanvas') || null;
+	var fileName = file.name || null;
+	var matchTypePNG =  /.png/;
+	var matchTypeJPG = /.jpeg/;
+	//is it a PNG or JPEG
+	if(file.type.match(matchTypePNG)) {
+		imageData = imageData.toDataURL('image/png');
+		//console.log('Is PNG');
+		
+ 		
+	} else if(file.type.match(matchTypeJPG)) {
+		imageData = imageData.toDataURL('image/jpeg', .75);
+		//console.log('Is JPG');
+ 		
+	} else {
+		return false;
+	}
+	
+	if(imageData != null || fileName != null) {
+		console.log($(link)[0]);
+		$(link).attr({
+			'download':fileName,
+			'href':imageData
+		});
+
+	}
+
+	
 	
 };
+
 //upload and process image
 CropApp.processUpload = function(data) {
 	//allow only image types
@@ -37,6 +74,7 @@ CropApp.processImage = function(image) {
 		//read the image and convert to Base64-encoded string
 		$($imageReader).on('load', function(imageData){
 			var image = imageData.target.result
+			console.log(image);
 			CropApp.loadToCanvas(image);
 		})
 		$imageReader.readAsDataURL(image);
@@ -67,14 +105,9 @@ $(window).load(function(){
 	
 	//on download button click
 	$downloadBtn.on('click', function(event){
-		var downloadBtn = this;
-		var imageData = $cropArea.cropper('getCroppedCanvas').toDataURL();
-		var filename  = "example.png";
+		CropApp.downloadCanvas(this, CropApp.canvasArea, CropApp.image);
 		
-		$(downloadBtn).attr({
-			"download": filename,
-			"href": imageData
-		});
+		
 		
 		
 	});
