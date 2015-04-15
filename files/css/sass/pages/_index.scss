@@ -11,3 +11,11 @@
 .tabs .indicator {
 	background: #274E88;
 }
+section.row {
+	margin-bottom: 0;
+}
+@media #{$medium-and-down} {
+	.row aside.col  {
+		padding: 1em;
+	}
+}

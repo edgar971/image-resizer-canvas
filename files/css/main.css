@@ -14273,3 +14273,13 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 /* line 11, /Users/edgar971/Documents/Labs/image-cropper/files/css/sass/pages/_index.scss */
 .tabs .indicator {
   background: #274E88; }
+
+/* line 14, /Users/edgar971/Documents/Labs/image-cropper/files/css/sass/pages/_index.scss */
+section.row {
+  margin-bottom: 0; }
+
+@media only screen and (max-width : 992px) {
+  /* line 18, /Users/edgar971/Documents/Labs/image-cropper/files/css/sass/pages/_index.scss */
+  .row aside.col {
+    padding: 1em; }
+ }

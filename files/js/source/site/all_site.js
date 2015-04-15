@@ -29,7 +29,7 @@ CropApp.downloadCanvas = function(link, canvas, file) {
 		
  		
 	} else if(file.type.match(matchTypeJPG)) {
-		imageData = imageData.toDataURL('image/jpeg', .75);
+		imageData = imageData.toDataURL('image/jpeg', .8);
 		//console.log('Is JPG');
  		
 	} else {
@@ -55,6 +55,7 @@ CropApp.processUpload = function(data) {
 	var type = /image.*/;
 	if(data.target.files[0].type.match(type)) {
 		CropApp.image = data.target.files[0];
+		console.log(CropApp.image);
 		CropApp.processImage(CropApp.image);
 		return true;
 	} else {
@@ -74,7 +75,7 @@ CropApp.processImage = function(image) {
 		//read the image and convert to Base64-encoded string
 		$($imageReader).on('load', function(imageData){
 			var image = imageData.target.result
-			console.log(image);
+			//console.log(image);
 			CropApp.loadToCanvas(image);
 		})
 		$imageReader.readAsDataURL(image);
@@ -90,12 +91,19 @@ $(window).load(function(){
 	
 	var $cropArea = $('.cropper-container > img'),
 		$downloadBtn = $('[data-crop="download"]'),
-		$imageUploader = $('.image-uploader');
+		$imageUploader = $('.image-uploader'),
+		$zoomInBtn = $('[data-trigger="zoom-in"]'),
+		$zoomOutBtn = $('[data-trigger="zoom-out"]'),
+		$rotateLeftBtn = $('[data-trigger="rotate-left"]'),
+		$rotateRightBtn = $('[data-trigger="rotate-right"]'),
+		$changeAspectBtn = $('[data-aspect-ratio]');
+		
     
     $('select').material_select();
 	CropApp.canvasArea = $cropArea;
 	$cropArea.cropper({
 		aspectRatio: NaN,
+		strict: false,
 		crop: function(data) {
 			 $("#height_input").val(Math.round(data.height));
 			 $("#width_input").val(Math.round(data.width));
@@ -111,8 +119,33 @@ $(window).load(function(){
 		
 		
 	});
+	//
 	$imageUploader.on('change', CropApp.processUpload);
 	
+	//zoom image
+	$zoomInBtn.on('click', function(){
+		$cropArea.cropper('zoom', 0.1);
+	});
+	$zoomOutBtn.on('click', function(){
+		$cropArea.cropper('zoom', -0.1);
+	});
+	
+	
+	//rotate image
+	$rotateLeftBtn.on('click', function(){
+		$cropArea.cropper('rotate', -10);
+	});
+	$rotateRightBtn.on('click', function(){
+		$cropArea.cropper('rotate', 10);
+	});
+	
+	//aspect ration
+	$changeAspectBtn.on('click', function(event){
+		var ratio = $(this).data('aspectRatio');
+		ratio = Number(ratio.split('/')[0]) / Number(ratio.split('/')[1]);
+		console.log(ratio);
+		$cropArea.cropper('setAspectRatio', ratio);
+	});
 	
 	
 	
